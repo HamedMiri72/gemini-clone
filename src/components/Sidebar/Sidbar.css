@@ -17,7 +17,7 @@
     cursor: pointer;
 }
 .sidbar .new-chat{
-    margin-top: 10px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -55,3 +55,13 @@
     background-color: #e2e6eb;
 }
 
+.sidbar .bottom{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sidbar .bottom-item{
+    padding-right: 10px;
+    cursor: pointer;
+}

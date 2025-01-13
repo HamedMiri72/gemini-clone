@@ -20,7 +20,11 @@ const ContextProvider = (props) =>{
     const [resultData, setResultData] = useState("");
 
 
-    
+    const delayPara = (index, nextWord) =>{
+
+
+
+    }
 
     const onsent = async (prompt) =>{
 
@@ -29,7 +33,19 @@ const ContextProvider = (props) =>{
         setShowResult(true)
         setResetPrompt(input)
         const response = await run(input)
-        setResultData(response)
+        let resposeArray = response.split("**");
+        let newResponse;
+        for(let i=0; i < resposeArray.length; i++)
+        {
+            if(i === 0 || i%2 !== 1){
+                newResponse += resposeArray[i];
+            }
+            else {
+                newResponse += "<b>" + resposeArray[i] + "</b>"
+            }
+        }
+        let newResponse2 = newResponse.split("*").join("</br>")
+        setResultData(newResponse2)
         setLoading(false)
         setInput("")
 
